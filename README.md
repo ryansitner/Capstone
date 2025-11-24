@@ -1,2 +1,2 @@
-# Capstone
-ePortfolio of my Computer Science Capstone project at SNHU
+# Enhancement One - Software Design & Engineering
+For Enhancement One of the TextBasedGame, the goal was to refactor the original procedural game logic into an Object-Oriented Programming (OOP) model. This involved creating a Room Class to encapsulate each room's specific data (exits, items, descriptions) a Player Class to manage the inventory and location, replacing the current global variables and dictionaries, and a Map Class to maintain all Room objects and overall map structure.
