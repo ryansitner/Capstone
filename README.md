@@ -1,2 +1,2 @@
-# Capstone
-ePortfolio of my Computer Science Capstone project at SNHU
+# Enhancement Two - Algorithms and Data Structure
+For Enhancement Two of the TextBasedGame, the focus shifted from structural design to algorithmic complexity and efficiency. Building upon the Object-Oriented foundation established in Enhancement One, this update implements a procedural map generation system using a modified Randomized Prim's Algorithm. This ensures a unique, fully connected dungeon layout for every playthrough, replacing the static map of the original game. Additionally, a Breadth-First Search (BFS) validation step was integrated to algorithmically guarantee that every generated map is solvable. To improve runtime efficiency, the player's inventory system was refactored from a list to a Hash Set, optimizing item lookup operations from O(n) to O(1) time complexity.
