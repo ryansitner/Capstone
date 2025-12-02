@@ -1,2 +1,2 @@
-# Capstone
-ePortfolio of my Computer Science Capstone project at SNHU
+# # Enhancement Three - Databases
+For Enhancement Three of the TextBasedGame, the focus shifted to data persistence and storage architecture. Building upon the dynamic environment created in Enhancement Two, this update integrates a MongoDB NoSQL database to eliminate the reliance on volatile memory and hardcoded data. A custom DatabaseManager class was implemented to handle database connections and operations, allowing room and item data to be queried dynamically rather than stored in static dictionaries. The centerpiece of this enhancement is a robust Save/Load system. Because the game map is procedurally generated, a simple save of the player's coordinates was insufficient; the system was engineered to serialize the entire graph structure. Saving the unique dungeon layout, dynamic exits, and item states—ensuring full data integrity and state preservation between sessions.
