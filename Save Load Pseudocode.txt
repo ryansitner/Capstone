@@ -1,0 +1,66 @@
+FUNCTION SAVE_GAME (player_id, player_object, game_map_object)
+    
+    // Prepare Player State for MongoDB Document
+    SET player_state_data TO NEW DOCUMENT
+        player_state_data.id = player_id
+        player_state_data.room_name = player_object.current_room.name
+        player_state_data.inventory_list = player_object.inventory
+        player_state_data.save_time = GET_CURRENT_TIME()
+    END DOCUMENT
+
+    // Prepare Map State (Saves the dynamic map)
+    SET map_state_data TO game_map_object.get_current_exits()
+
+    // Create the Complete Save Document
+    SET save_document TO NEW DOCUMENT
+        save_document.player_data = player_state_data
+        save_document.map_data = map_state_data
+    END DOCUMENT
+
+    // Upsert (Update if exists, Insert if new) Document in MongoDB
+    TRY
+        DATABASE.COLLECTION["game_saves"].UPDATE_ONE (
+            QUERY: Find document WHERE player_data.id EQUALS player_id,
+            UPDATE: SET all fields to save_document,
+            UPSERT: TRUE
+        )
+        RETURN "Game saved successfully."
+    CATCH Error:
+        RETURN "Error saving game: " + Error.message
+
+END FUNCTION
+
+---------------------------------------------------------------------------
+
+FUNCTION LOAD_GAME (player_id)
+    
+    // Attempt to Retrieve Save Document
+    TRY
+        SET save_document TO DATABASE.COLLECTION["game_saves"].FIND_ONE (
+            QUERY: Find document WHERE player_data.id EQUALS player_id
+        )
+    CATCH Error:
+        RETURN NULL // Database connection failed
+
+    // Check if a Save File Exists
+    IF save_document IS NULL THEN
+        RETURN NULL // No save file found
+    END IF
+
+    // Load Map State (Rebuilds the graph structure)
+    SET map_data TO save_document.map_data
+    SET new_game_map TO GameMap.load_existing_map (map_data)
+
+    // Load Player State and Rebuild OOP Objects
+    SET player_data TO save_document.player_data
+    
+    SET new_player TO NEW Player(player_data.name) 
+    new_player.inventory = player_data.inventory_list
+    
+    SET current_room_object TO new_game_map.get_room(player_data.room_name)
+    new_player.current_room = current_room_object
+
+    // Return the Rebuilt Objects to Main Game
+    RETURN { "player": new_player, "game_map": new_game_map }
+
+END FUNCTION
