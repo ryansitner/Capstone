@@ -13,6 +13,9 @@ This project is the culmination of a computer science capstone, enhancing a basi
 *   **Algorithms:** Randomized Prim's algorithm for dungeon generation and BFS for map validation.
     
 *   **Databases:** MongoDB integration for data persistence (Save/Load).
+
+
+To transparently showcase the iterative evolution of this project, the repository is organized into distinct branches. Each branch corresponds to a specific phase of enhancement, allowing reviewers to examine the code's progression from its initial procedural state to its final modular form. The **main** branch represents the fully integrated, polished application, incorporating all three major enhancements: Software Design, Algorithms, and Databases.
     
 
 Setup and Installation
