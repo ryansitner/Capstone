@@ -1,1 +1,115 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Sitner - CS Capstone Portfolio</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; border-bottom: 2px solid #2c3e50; padding-bottom: 20px; margin-bottom: 40px; }
+        h1 { color: #2c3e50; }
+        h2 { color: #e67e22; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 40px; }
+        .intro { background: #f9f9f9; padding: 20px; border-radius: 8px; }
+        .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; background: #3498db; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; margin-right: 10px; font-size: 0.9em; }
+        .btn:hover { background: #2980b9; }
+        .download-btn { background: #27ae60; }
+        .download-btn:hover { background: #219150; }
+        .artifact-links { margin-top: 15px; }
+        footer { margin-top: 50px; text-align: center; color: #777; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Ryan Sitner - Computer Science ePortfolio</h1>
+    <p>Capstone Project: Full-Stack Enhancement of a Text-Based Adventure Game</p>
+</header>
+
+<!-- 2) Professional Self-Assessment -->
+<section class="intro">
+    <h2>Professional Self-Assessment</h2>
+    <p>Reflecting on my journey through the Computer Science program, this assessment outlines my growth in software engineering, algorithms, and database management, and articulates my career goals in Full Stack Development.</p>
+    <a href="../Professional Self Assessment.docx" class="btn">Read Self-Assessment (DOCX)</a>
+</section>
+
+<!-- 3) Code Review -->
+<section>
+    <h2>Code Review</h2>
+    <p>A video walkthrough analyzing the original artifact's weaknesses and proposing the comprehensive enhancement plan.</p>
+    <a href="https://youtu.be/LoU2TGlupmc?si=u8y5anuxWcMTNEAI" class="btn" target="_blank">Watch Code Review Video</a>
+</section>
+
+<!-- 4) Original Artifact -->
+<section>
+    <h2>Original Artifact</h2>
+    <div class="card">
+        <h3>Text-Based Adventure Game (Initial Version)</h3>
+        <p>The original Python script created at the beginning of the degree program. It features procedural logic, hardcoded data, and no persistence.</p>
+        <a href="../textbasedgame_original.py" class="btn download-btn">View Original Code</a>
+    </div>
+</section>
+
+<!-- 5) Final Product -->
+<section>
+    <h2>Final Polished Artifact</h2>
+    <div class="card" style="background-color: #f0fdf4; border-color: #bbf7d0;">
+        <h3>Complete Integrated Application</h3>
+        <p>The final version of the application, integrating all three enhancements: modular OOP design, procedural generation, and MongoDB persistence.</p>
+        <a href="../main.py" class="btn download-btn">View Main Code</a>
+        <a href="https://github.com/ryansitner/Capstone" class="btn">View Full Repository (Main Branch)</a>
+    </div>
+</section>
+
+<!-- 6) Enhancement One -->
+<section>
+    <h2>Enhancement One: Software Design & Engineering</h2>
+    <div class="card">
+        <h3>Object-Oriented Refactoring</h3>
+        <p>Refactored the monolithic procedural script into a modular Object-Oriented application. This enhancement introduced the Room, Player, and GameMap classes to improve maintainability and encapsulate state.</p>
+        
+        <div class="artifact-links">
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-One/Enhancement%20One%20Narrative.docx" class="btn">Read Narrative (DOCX)</a>
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-One/UML%20Class%20Diagram.jpeg" class="btn" target="_blank">View UML Class Diagram</a>
+            <a href="https://github.com/ryansitner/Capstone/tree/Enhancement-One/textGameCapstone_EnhancementOne/textGameCapstone" class="btn download-btn">View Enhancement One Code</a>
+        </div>
+    </div>
+</section>
+
+<!-- 7) Enhancement Two -->
+<section>
+    <h2>Enhancement Two: Algorithms & Data Structures</h2>
+    <div class="card">
+        <h3>Procedural Generation & Optimization</h3>
+        <p>Implemented a Modified Prim's Algorithm to procedurally generate a unique dungeon layout every game. Integrated Breadth-First Search (BFS) for map validation and optimized inventory lookups from O(n) to O(1).</p>
+        
+        <div class="artifact-links">
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-Two/Enhancement%20Two%20Narrative.docx" class="btn">Read Narrative (DOCX)</a>
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-Two/Map%20Randomization%20Flowchart.jpeg" class="btn" target="_blank">View Map Algorithm Flowchart</a>
+            <a href="https://github.com/ryansitner/Capstone/tree/Enhancement-Two/textGameCapstone_EnhancementTwo/textGameCapstone" class="btn download-btn">View Enhancement Two Code</a>
+        </div>
+    </div>
+</section>
+
+<!-- 8) Enhancement Three -->
+<section>
+    <h2>Enhancement Three: Databases</h2>
+    <div class="card">
+        <h3>Data Persistence with MongoDB</h3>
+        <p>Integrated a NoSQL database to replace static data structures. Created a robust Save/Load system that serializes the complex graph of the procedurally generated map, ensuring true data persistence.</p>
+        
+        <div class="artifact-links">
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-Three/Enhancement%20Three%20Narrative.docx" class="btn">Read Narrative (DOCX)</a>
+            <a href="https://github.com/ryansitner/Capstone/blob/Enhancement-Three/Save%20Load%20Pseudocode.txt" class="btn">Save/Load Pseudocode</a>
+            <a href="https://github.com/ryansitner/Capstone/tree/Enhancement-Three/textGameCapstone" class="btn download-btn">View Enhancement Three Code</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Southern New Hampshire University | CS 499 Capstone</p>
+    <p><a href="https://github.com/ryansitner/Capstone">View Full Repository on GitHub</a></p>
+</footer>
+
+</body>
+</html>
